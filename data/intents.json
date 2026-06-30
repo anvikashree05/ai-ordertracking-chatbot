@@ -1,0 +1,118 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "hi",
+        "hello",
+        "hey",
+        "good morning",
+        "good evening"
+      ],
+      "responses": [
+        "Hello! How can I help you today?"
+      ]
+    },
+
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "bye",
+        "goodbye",
+        "see you",
+        "talk later",
+        "exit"
+      ],
+      "responses": [
+        "Goodbye! Have a great day."
+      ]
+    },
+
+    {
+      "tag": "order_tracking",
+      "patterns": [
+        "track my order",
+        "where is my package",
+        "check shipment status",
+        "order status",
+        "where is my order",
+        "track order",
+        "delivery status",
+        "where is my parcel",
+        "check my delivery",
+        "shipment tracking"
+      ],
+      "responses": [
+        "You can track your order using your Order ID in the Orders section."
+      ]
+    },
+
+    {
+  "tag": "delivery_time",
+  "patterns": [
+    "when will my order arrive",
+    "delivery date",
+    "expected delivery",
+    "when is my package coming",
+    "arrival date"
+  ],
+  "responses": [
+    "Please provide your Order ID to check the expected delivery date."
+  ]
+},
+{
+  "tag": "order_delay",
+  "patterns": [
+    "why is my order delayed",
+    "order delayed",
+    "late delivery",
+    "package delayed",
+    "delivery delay"
+  ],
+  "responses": [
+    "I can check your order status if you provide your Order ID."
+  ]
+},
+{
+  "tag": "change_address",
+  "patterns": [
+    "change delivery address",
+    "update address",
+    "wrong delivery address",
+    "modify shipping address",
+    "change shipping address"
+  ],
+  "responses": [
+    "You can update your delivery address before the order is shipped."
+  ]
+},
+{
+  "tag": "cancel_order",
+  "patterns": [
+    "cancel my order",
+    "order cancellation",
+    "stop my order",
+    "cancel shipment",
+    "cancel order"
+  ],
+  "responses": [
+    "Orders can be cancelled before they are shipped."
+  ]
+},
+
+{
+ "tag": "thanks",
+      "patterns": [
+        "thank you",
+        "thanks",
+        "thankyou",
+        "appreciate it",
+        "thanks a lot",
+        "great help"
+      ],
+      "responses": [
+        "You're welcome! Happy to help."
+      ]
+    }
+  ]
+}

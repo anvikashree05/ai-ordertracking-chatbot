@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6f9;
+    padding:20px;
+}
+
+h1{
+    text-align:center;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+th,td{
+    padding:10px;
+    border:1px solid #ddd;
+}
+
+form{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+input{
+    padding:10px;
+    width:300px;
+}
+
+button{
+    padding:10px 15px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+</style>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+<h1>📦 Order Tracking Admin Dashboard</h1>
+
+    <h2>Total Chats: {{ count }}</h2>
+    <h2>Unanswered Questions</h2>
+
+<table border="1">
+
+<tr>
+    <th>Question</th>
+    <th>Timestamp</th>
+</tr>
+
+{% for q in unanswered %}
+
+<tr>
+    <td>{{ q[0] }}</td>
+    <td>{{ q[1] }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+<h2>Add Order</h2>
+
+<form action="/add_order" method="POST">
+
+    <input
+        type="text"
+        name="order_id"
+        placeholder="Order ID"
+        required
+    ><br><br>
+
+    <input
+        type="text"
+        name="customer_name"
+        placeholder="Customer Name"
+        required
+    ><br><br>
+
+    <input
+        type="text"
+        name="status"
+        placeholder="Status"
+        required
+    ><br><br>
+
+    <input
+        type="text"
+        name="location"
+        placeholder="Location"
+        required
+    ><br><br>
+
+    <input
+        type="date"
+        name="delivery_date"
+        required
+    ><br><br>
+
+    <button type="submit">
+        Add Order
+    </button>
+
+</form>
+
+<hr>
+
+<h2>Search Chats</h2>
+
+<form action="/search">
+
+    <input
+        type="text"
+        name="keyword"
+        placeholder="Search chats..."
+    >
+
+    <button type="submit">
+        Search
+    </button>
+
+</form>
+
+<hr>
+
+<h2>Add FAQ</h2>
+
+<form action="/add_faq" method="POST">
+
+    <label>Question:</label><br>
+    <input type="text" name="question" required style="width:400px;"><br><br>
+
+    <label>Answer:</label><br>
+    <input type="text" name="answer" required style="width:400px;"><br><br>
+
+    <button type="submit">
+        Save FAQ
+    </button>
+
+</form>
+
+<hr>
+
+<hr>
+   
+</table>
+
+<hr>
+
+    <a href="/">
+        <button>Back to Chatbot</button>
+    </a>
+
+    <hr>
+    <h2>Recent Chats</h2>
+
+    {% for chat in chats %}
+
+        <p>
+            <b>User:</b> {{ chat[0] }}
+        </p>
+
+        <p>
+            <b>Bot:</b> {{ chat[1] }}
+        </p>
+
+        <hr>
+
+    {% endfor %}
+
+</body>
+</html>

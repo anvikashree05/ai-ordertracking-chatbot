@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Order Tracking Chatbot</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📦 AI Order Tracking Chatbot</h1>
+
+    <p class="subtitle">
+        Track orders, delivery status and FAQs instantly
+    </p>
+
+    <div class="top-buttons">
+
+        <a href="/admin">
+            <button>Admin Dashboard</button>
+        </a>
+
+        <a href="/clear">
+            <button>Clear Chat</button>
+        </a>
+
+    </div>
+
+    <div id="chat-box">
+
+        {% for chat in chats %}
+
+            <div class="message user">
+                <strong>You:</strong><br>
+                {{ chat[0] }}
+            </div>
+
+            <div class="message bot">
+                <strong>Bot:</strong><br>
+                {{ chat[1] }}
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+    <div class="input-area">
+
+        <input
+            type="text"
+            id="message"
+            placeholder="Ask about your order..."
+        >
+
+        <button onclick="sendMessage()">
+            Send
+        </button>
+
+    </div>
+
+    <div class="examples">
+
+        <h3>Try asking:</h3>
+
+        <p>My order ID is 12345</p>
+        <p>Track my order</p>
+        <p>Where is my order 12345?</p>
+        <p>How do I change my delivery address?</p>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
